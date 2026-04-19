@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Viqtorhvayx
 - 👀 I’m interested in crypto mostly web3 projects
-- 🌱 I’m currently learning UI/UX design
+- 🌱 I’m currently builder/developer
 - 💞️ I’m looking to collaborate on ...
 - 📫 Reach out to me victorolagbaye679@gmail.com
 - ⚡ Fun fact: I like meeting new people 

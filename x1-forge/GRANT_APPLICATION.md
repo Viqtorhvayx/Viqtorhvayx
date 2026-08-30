@@ -15,7 +15,7 @@ X1 Forge is the official developer starter kit for X1 EcoChain: a single CLI com
 
 **Technical Roadmap**
 - M1 (Weeks 1–2): `create-x1-app` CLI + default template — Hardhat project preconfigured with Maculatus testnet (chain ID 10778), sample `Greeter` contract, deploy + test scripts, wallet-connect frontend demo. **[Status: complete — CLI scaffolds, `npm test` and `hardhat compile` pass, and a contract deployed live to the Maculatus testnet: [`0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755`](https://maculatus-scan.x1eco.com/address/0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755).]**
-- M2 (Weeks 3–4): UX layer — one-click "Add to MetaMask" (implemented), CLI output with faucet instructions (implemented), a network-status check command, and a second template (e.g. ERC-20 or NFT starter).
+- M2 (Weeks 3–4): UX layer — one-click "Add to MetaMask", CLI output with faucet instructions, a network-status check command, and a second template (ERC-20). **[Status: complete — `create-x1-app status` checks live RPC health; `create-x1-app <name> --template erc20` scaffolds an OpenZeppelin-based token with a balance/transfer frontend, deployed live to the Maculatus testnet: [`0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53`](https://maculatus-scan.x1eco.com/address/0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53).]**
 - M3 (Weeks 5–6): Docs/tutorial site — quickstart, SDK integration guides (JS + Python), a short walkthrough video, published to a docs domain.
 - M4 (Weeks 7–8): Reference dApp built end-to-end with the kit, deployed live on the Maculatus testnet, linked from the docs as a worked example.
 
@@ -47,8 +47,8 @@ Requesting an upfront payment (up to 20%) to cover initial development, with the
 
 - **Milestone 2**
   - Name: UX Layer
-  - Description: Add one-click network setup, CLI-embedded faucet guidance, a network-status check, and a second starter template (ERC-20 or NFT).
-  - Deliverables & Success Metrics/KPIs: `wallet_addEthereumChain` flow ships in the frontend demo; `create-x1-app --template <name>` supports 2+ templates; network status command returns live RPC health.
+  - Description: Add one-click network setup, CLI-embedded faucet guidance, a network-status check, and a second starter template (ERC-20).
+  - Deliverables & Success Metrics/KPIs: `wallet_addEthereumChain` flow ships in the frontend demo; `create-x1-app --template <name>` supports 2+ templates; network status command returns live RPC health. **Already demonstrated: `create-x1-app status` reports live chain ID/block/latency; the ERC-20 template deployed live at `0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53`.**
   - Estimated Completion Date: [date]
   - Amount Requested: [amount]
 
@@ -67,7 +67,7 @@ Requesting an upfront payment (up to 20%) to cover initial development, with the
   - Amount Requested: [amount]
 
 **Current Development Stage**
-Milestone 1 complete — CLI and default template built and verified end-to-end against the live Maculatus testnet: scaffold, install, compile, test, and deploy all succeed, with a deployed sample contract at [`0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755`](https://maculatus-scan.x1eco.com/address/0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755).
+Milestones 1 and 2 complete — CLI, both starter templates, one-click MetaMask add, and the `status` command are all built and verified end-to-end against the live Maculatus testnet, with two deployed contracts as proof: `Greeter` at [`0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755`](https://maculatus-scan.x1eco.com/address/0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755) and `X1Token` at [`0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53`](https://maculatus-scan.x1eco.com/address/0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53).
 
 **Duration working on the project**
 [e.g. "2 weeks" — fill in actual]

@@ -6,22 +6,71 @@ const path = require('path');
 
 const TEMPLATES_DIR = path.join(__dirname, '..', 'templates');
 
+const X1_TESTNET = {
+  name: 'Maculatus Testnet',
+  rpcUrl: 'https://maculatus-rpc.x1eco.com/',
+  chainId: 10778,
+};
+
 function printHelp() {
   console.log(`
 X1 Forge — create-x1-app
 
 Usage:
   create-x1-app <project-name> [--template <name>]
+  create-x1-app status
 
 Options:
   --template <name>   Template to scaffold (default: "default")
   --list-templates    List available templates
   -h, --help          Show this help message
 
+Commands:
+  status               Check X1 EcoChain testnet RPC health (chain ID, block number, latency)
+
 Examples:
   create-x1-app my-dapp
-  create-x1-app my-dapp --template default
+  create-x1-app my-dapp --template erc20
+  create-x1-app status
 `);
+}
+
+async function rpcCall(url, method, params = []) {
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const json = await res.json();
+  if (json.error) throw new Error(json.error.message || 'RPC error');
+  return json.result;
+}
+
+async function checkStatus() {
+  console.log(`Checking ${X1_TESTNET.name} (${X1_TESTNET.rpcUrl}) ...\n`);
+  const start = Date.now();
+  try {
+    const [chainIdHex, blockHex] = await Promise.all([
+      rpcCall(X1_TESTNET.rpcUrl, 'eth_chainId'),
+      rpcCall(X1_TESTNET.rpcUrl, 'eth_blockNumber'),
+    ]);
+    const latency = Date.now() - start;
+    const chainId = parseInt(chainIdHex, 16);
+    const blockNumber = parseInt(blockHex, 16);
+    const chainIdOk = chainId === X1_TESTNET.chainId;
+
+    console.log(`  RPC:          reachable`);
+    console.log(`  Latency:      ${latency}ms`);
+    console.log(`  Chain ID:     ${chainId}${chainIdOk ? '' : ` (!) expected ${X1_TESTNET.chainId}`}`);
+    console.log(`  Block number: ${blockNumber}`);
+    console.log(`\n  Status: ${chainIdOk ? 'OK' : 'MISMATCH'}`);
+    if (!chainIdOk) process.exitCode = 1;
+  } catch (err) {
+    console.log(`  RPC:    unreachable (${err.message})`);
+    console.log(`\n  Status: DOWN`);
+    process.exitCode = 1;
+  }
 }
 
 function listTemplates() {
@@ -63,7 +112,7 @@ function parseArgs(argv) {
   return args;
 }
 
-function main() {
+async function main() {
   const args = parseArgs(process.argv.slice(2));
 
   if (args.help) {
@@ -73,6 +122,11 @@ function main() {
 
   if (args.listTemplates) {
     listTemplates();
+    return;
+  }
+
+  if (args._[0] === 'status') {
+    await checkStatus();
     return;
   }
 
@@ -132,3 +186,4 @@ Then open frontend/index.html (or serve it) to try the wallet-connect demo.
 }
 
 main();
+

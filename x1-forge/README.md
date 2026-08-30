@@ -14,24 +14,37 @@ cp .env.example .env   # add your PRIVATE_KEY
 npm run deploy:testnet
 ```
 
-See [`packages/create-x1-app`](./packages/create-x1-app) for the CLI, and [`packages/create-x1-app/templates/default`](./packages/create-x1-app/templates/default) for what gets scaffolded.
+Check RPC health any time with:
+
+```bash
+npx create-x1-app status
+```
+
+Scaffold the ERC-20 starter instead of the default `Greeter` demo:
+
+```bash
+npx create-x1-app my-token --template erc20
+```
+
+See [`packages/create-x1-app`](./packages/create-x1-app) for the CLI, and `packages/create-x1-app/templates/` for what gets scaffolded (`default` and `erc20`).
 
 ## Project structure
 
 ```
 x1-forge/
 ├── packages/
-│   └── create-x1-app/       CLI that scaffolds new projects
+│   └── create-x1-app/       CLI that scaffolds new projects, plus `status` command
 │       └── templates/
-│           └── default/     Hardhat + wallet-connect starter dApp
+│           ├── default/     Hardhat + wallet-connect starter dApp
+│           └── erc20/       OpenZeppelin ERC-20 starter with balance/transfer UI
 ├── docs/                    Quickstart & tutorials
 └── GRANT_APPLICATION.md     X1 EcoChain Ecosystem Grants application draft
 ```
 
 ## Roadmap
 
-- [x] **M1** — `create-x1-app` CLI + starter template (wallet connect, sample contract, deploy/verify scripts)
-- [ ] **M2** — UX layer: one-click "Add to MetaMask", faucet instructions built into the CLI output, network status checks
+- [x] **M1** — `create-x1-app` CLI + starter template (wallet connect, sample contract, deploy/verify scripts). Verified live: [`0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755`](https://maculatus-scan.x1eco.com/address/0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755)
+- [x] **M2** — UX layer: one-click "Add to MetaMask", faucet instructions in CLI output, `status` command, second (ERC-20) template. Verified live: [`0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53`](https://maculatus-scan.x1eco.com/address/0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53)
 - [ ] **M3** — Docs/tutorial site (quickstart, SDK guides, walkthrough video)
 - [ ] **M4** — Reference dApp built end-to-end with the kit, deployed live
 

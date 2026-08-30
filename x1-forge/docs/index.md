@@ -19,6 +19,10 @@ npx create-x1-app my-dapp
 - [Verifying Your Contract](./verify-contract.md) — publish source on the X1 EcoChain explorer
 - [Walkthrough](./walkthrough.md) — a real terminal recording of the full flow
 
+## Reference dApp
+
+[X1 Faucet](https://github.com/Viqtorhvayx/Viqtorhvayx/tree/main/x1-forge/examples/faucet-dapp) — a worked example built end-to-end with X1 Forge: a self-serve claim faucet (ERC-20 with a cooldown-gated `claim()` function) and a frontend to use it, live on the Maculatus testnet at [`0xd76A5eB14a81Cb06A05474B97D028cD772EeBa2F`](https://maculatus-scan.x1eco.com/address/0xd76A5eB14a81Cb06A05474B97D028cD772EeBa2F).
+
 ## Network reference
 
 | | |

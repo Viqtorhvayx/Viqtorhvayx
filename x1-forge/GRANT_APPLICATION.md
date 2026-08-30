@@ -17,7 +17,7 @@ X1 Forge is the official developer starter kit for X1 EcoChain: a single CLI com
 - M1 (Weeks 1–2): `create-x1-app` CLI + default template — Hardhat project preconfigured with Maculatus testnet (chain ID 10778), sample `Greeter` contract, deploy + test scripts, wallet-connect frontend demo. **[Status: complete — CLI scaffolds, `npm test` and `hardhat compile` pass, and a contract deployed live to the Maculatus testnet: [`0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755`](https://maculatus-scan.x1eco.com/address/0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755).]**
 - M2 (Weeks 3–4): UX layer — one-click "Add to MetaMask", CLI output with faucet instructions, a network-status check command, and a second template (ERC-20). **[Status: complete — `create-x1-app status` checks live RPC health; `create-x1-app <name> --template erc20` scaffolds an OpenZeppelin-based token with a balance/transfer frontend, deployed live to the Maculatus testnet: [`0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53`](https://maculatus-scan.x1eco.com/address/0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53).]**
 - M3 (Weeks 5–6): Docs/tutorial site — quickstart, SDK integration guides (JS + Python), a walkthrough, published to a docs domain. **[Status: content complete — quickstart, templates guide, JS SDK guide (ethers.js) and Python SDK guide (web3.py) both verified against live chain data, contract-verification guide, and a real terminal-recorded walkthrough of the full flow. Site is Jekyll-ready with a GitHub Actions deploy workflow; live publish needs one manual GitHub Pages toggle (Settings → Pages → Source: GitHub Actions) which only a repo owner can set.]**
-- M4 (Weeks 7–8): Reference dApp built end-to-end with the kit, deployed live on the Maculatus testnet, linked from the docs as a worked example.
+- M4 (Weeks 7–8): Reference dApp built end-to-end with the kit, deployed live on the Maculatus testnet, linked from the docs as a worked example. **[Status: complete — "X1 Faucet," a self-serve ERC-20 claim faucet with an on-chain cooldown, deployed live at [`0xd76A5eB14a81Cb06A05474B97D028cD772EeBa2F`](https://maculatus-scan.x1eco.com/address/0xd76A5eB14a81Cb06A05474B97D028cD772EeBa2F). Its `claim()` function was exercised against the live deployment — a real claim succeeded, and a second immediate claim correctly reverted with the on-chain cooldown message — not just verified in local tests. Linked from the docs homepage.]**
 
 **Project website**
 [URL — e.g. GitHub Pages or docs site once M3 ships]
@@ -62,18 +62,18 @@ Requesting an upfront payment (up to 20%) to cover initial development, with the
 - **Milestone 4**
   - Name: Reference dApp
   - Description: Ship a complete example application built with X1 Forge, deployed live on the Maculatus testnet.
-  - Deliverables & Success Metrics/KPIs: Contract verified on the X1 EcoChain explorer; live frontend URL; linked as the canonical example from the docs.
+  - Deliverables & Success Metrics/KPIs: Contract verified on the X1 EcoChain explorer; live frontend URL; linked as the canonical example from the docs. **Already demonstrated: "X1 Faucet" — a self-serve ERC-20 claim faucet with a cooldown, deployed live at `0xd76A5eB14a81Cb06A05474B97D028cD772EeBa2F`. `claim()` was called against the live contract (successful claim + a correctly-reverted repeat attempt), proving the core mechanic works on-chain, not just in tests. Linked from the docs homepage. Formal explorer source verification (see the M3 verify-contract guide) is still open — worth doing before the final submission.**
   - Estimated Completion Date: [date]
   - Amount Requested: [amount]
 
 **Current Development Stage**
-Milestones 1–3 complete — CLI, both starter templates, one-click MetaMask add, the `status` command, and a full docs site are all built and verified, including two deployed contracts as proof (`Greeter` at [`0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755`](https://maculatus-scan.x1eco.com/address/0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755) and `X1Token` at [`0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53`](https://maculatus-scan.x1eco.com/address/0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53)). Docs content and deploy pipeline are done; the live docs URL needs a one-time GitHub Pages toggle from the repo owner.
+All four milestones complete. CLI, both starter templates, one-click MetaMask add, the `status` command, a full docs site, and a reference dApp are all built and verified against the live Maculatus testnet — three deployed contracts as proof: `Greeter` at [`0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755`](https://maculatus-scan.x1eco.com/address/0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755), `X1Token` at [`0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53`](https://maculatus-scan.x1eco.com/address/0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53), and the `X1Faucet` reference dApp at [`0xd76A5eB14a81Cb06A05474B97D028cD772EeBa2F`](https://maculatus-scan.x1eco.com/address/0xd76A5eB14a81Cb06A05474B97D028cD772EeBa2F) with its `claim()` mechanic exercised live. Two things remain before final submission: a one-time GitHub Pages toggle from the repo owner to publish the docs site, and formal explorer source verification of the deployed contracts.
 
 **Duration working on the project**
 [e.g. "2 weeks" — fill in actual]
 
 **Project live status**
-Not yet live — pre-launch / in development
+Contracts and reference dApp live on the Maculatus testnet; CLI not yet published to npm; docs site built but not yet publicly hosted (pending the Pages toggle noted above).
 
 ---
 

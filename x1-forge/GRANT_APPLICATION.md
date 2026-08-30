@@ -16,7 +16,7 @@ X1 Forge is the official developer starter kit for X1 EcoChain: a single CLI com
 **Technical Roadmap**
 - M1 (Weeks 1–2): `create-x1-app` CLI + default template — Hardhat project preconfigured with Maculatus testnet (chain ID 10778), sample `Greeter` contract, deploy + test scripts, wallet-connect frontend demo. **[Status: complete — CLI scaffolds, `npm test` and `hardhat compile` pass, and a contract deployed live to the Maculatus testnet: [`0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755`](https://maculatus-scan.x1eco.com/address/0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755).]**
 - M2 (Weeks 3–4): UX layer — one-click "Add to MetaMask", CLI output with faucet instructions, a network-status check command, and a second template (ERC-20). **[Status: complete — `create-x1-app status` checks live RPC health; `create-x1-app <name> --template erc20` scaffolds an OpenZeppelin-based token with a balance/transfer frontend, deployed live to the Maculatus testnet: [`0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53`](https://maculatus-scan.x1eco.com/address/0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53).]**
-- M3 (Weeks 5–6): Docs/tutorial site — quickstart, SDK integration guides (JS + Python), a short walkthrough video, published to a docs domain.
+- M3 (Weeks 5–6): Docs/tutorial site — quickstart, SDK integration guides (JS + Python), a walkthrough, published to a docs domain. **[Status: content complete — quickstart, templates guide, JS SDK guide (ethers.js) and Python SDK guide (web3.py) both verified against live chain data, contract-verification guide, and a real terminal-recorded walkthrough of the full flow. Site is Jekyll-ready with a GitHub Actions deploy workflow; live publish needs one manual GitHub Pages toggle (Settings → Pages → Source: GitHub Actions) which only a repo owner can set.]**
 - M4 (Weeks 7–8): Reference dApp built end-to-end with the kit, deployed live on the Maculatus testnet, linked from the docs as a worked example.
 
 **Project website**
@@ -54,8 +54,8 @@ Requesting an upfront payment (up to 20%) to cover initial development, with the
 
 - **Milestone 3**
   - Name: Docs & Tutorials
-  - Description: Publish a quickstart, JS/Python SDK integration guides, and a short walkthrough video.
-  - Deliverables & Success Metrics/KPIs: Docs site live at [domain]; at least 3 guides published; video published and linked from the docs and README.
+  - Description: Publish a quickstart, JS/Python SDK integration guides, a templates guide, a contract-verification guide, and a walkthrough of the full flow.
+  - Deliverables & Success Metrics/KPIs: Docs site live at [domain]; 5 guides published (quickstart, templates, JS SDK, Python SDK, verification); walkthrough published and linked from docs and README. **Already demonstrated: all 5 guides written, JS and Python SDK examples independently verified against live chain data (real balance/contract reads), and a real terminal-recording walkthrough built from actual command output. Deploy pipeline (Jekyll + GitHub Actions) is in place; live URL pending a one-time Pages toggle by the repo owner.**
   - Estimated Completion Date: [date]
   - Amount Requested: [amount]
 
@@ -67,7 +67,7 @@ Requesting an upfront payment (up to 20%) to cover initial development, with the
   - Amount Requested: [amount]
 
 **Current Development Stage**
-Milestones 1 and 2 complete — CLI, both starter templates, one-click MetaMask add, and the `status` command are all built and verified end-to-end against the live Maculatus testnet, with two deployed contracts as proof: `Greeter` at [`0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755`](https://maculatus-scan.x1eco.com/address/0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755) and `X1Token` at [`0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53`](https://maculatus-scan.x1eco.com/address/0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53).
+Milestones 1–3 complete — CLI, both starter templates, one-click MetaMask add, the `status` command, and a full docs site are all built and verified, including two deployed contracts as proof (`Greeter` at [`0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755`](https://maculatus-scan.x1eco.com/address/0xaF8ecc6741c26BCCc7ccCe9BfC1f2Cd73E8a2755) and `X1Token` at [`0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53`](https://maculatus-scan.x1eco.com/address/0xB41DB8E536DDb13670239577dd06d6e4bFEE9C53)). Docs content and deploy pipeline are done; the live docs URL needs a one-time GitHub Pages toggle from the repo owner.
 
 **Duration working on the project**
 [e.g. "2 weeks" — fill in actual]
